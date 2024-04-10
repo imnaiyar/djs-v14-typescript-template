@@ -1,4 +1,4 @@
-# Discord.js v14 Bot Template (TypeScript)
+<h2 align="center"> Discord.js v14 Bot Template (TypeScript) </h2>
 
 This is a template for creating a Discord.js v14 bot using TypeScript. It provides a basic structure and setup to help you get started quickly.
 
