@@ -3,7 +3,7 @@
 This is a template for creating a Discord.js v14 bot using TypeScript. It provides a basic structure and setup to help you get started quickly.
 Support new **User Apps**.
 
-<img align="center" src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white"/>
+<p align="center"> <img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white"/> </p>
 
 ## Installation
 
