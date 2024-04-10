@@ -1,0 +1,82 @@
+{
+  "name": "djs-v14-typescript-template",
+  "version": "5.0.0",
+  "description": "A Bot for Sky: Children of the Light",
+  "main": "dist/index.js",
+  "type": "module",
+  "keywords": [
+    "Discord.js",
+    "Discordjs Template",
+    "TypeScript Template",
+    "Discordjs TypeScript Template"
+  ],
+  "scripts": {
+    "start": "node dist/index.js",
+    "build": "tsc -p tsconfig.json",
+    "dev": "node dist/index.js",
+    "commands": "node dist/libs/registerCommands.js",
+    "format": "npx prettier --write \"**/*.{js,css,ejs, ts}\""
+  },
+  "author": "Naiyar Imam",
+  "license": "MIT",
+  "overrides": {
+    "node-gyp": "latest"
+  },
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "discord.js": "^14.12.1",
+    "dotenv": "^16.3.1",
+    "pino": "^8.15.0",
+    "pino-pretty": "^11.0.0",
+    "table": "^6.8.1",
+    "text-table": "^0.2.0"
+  },
+  "imports": {
+    "#handlers": [
+      "./dist/handlers/index.js"
+    ],
+    "#handlers/*": [
+      "./dist/handlers/*.js"
+    ],
+    "#src/*": [
+      "./dist/*.js"
+    ],
+    "#commands/*": [
+      "./dist/commands/*.js"
+    ],
+    "#root/*": [
+      "./*.js"
+    ],
+    "#schemas/*": [
+      "./dist/database/schemas/*.js"
+    ],
+    "#structures/*": [
+      "./dist/structures/*.js"
+    ],
+    "#structures": [
+      "./dist/structures/index.js"
+    ],
+    "#libs/*": [
+      "./dist/libs/*.js"
+    ],
+    "#libs": [
+      "./dist/libs/index.js"
+    ],
+    "#functions/*": [
+      "./dist/functions/*.js"
+    ],
+    "#functions": [
+      "./dist/functions/index.js"
+    ]
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.5",
+    "@typescript-eslint/eslint-plugin": "^7.6.0",
+    "@typescript-eslint/parser": "^7.6.0",
+    "eslint": "^8.57.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-jsdoc": "^46.8.2",
+    "prettier": "^3.0.3",
+    "typescript": "^5.4.4"
+  }
+}
