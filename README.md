@@ -8,15 +8,11 @@ Support new **User Apps**.
 ## Installation
 
 To run the bot, follow these steps:
-
-1. Clone this repository:
+- Clone this repository:
     ```
     git clone https://github.com/imnaiyar/djs-v14-typescript-template
     ```
-2. Install the dependencies by running `npm i`.
-
-## Running the Project
-
+- Install the dependencies by running `npm i`.
 - To build the project, run: `npm run build`.
 - Rename `example.env` to `.env` and fill out the token, optionally provide discord's webhook urls for additional logs.
 - Start the project by running `npm start`.
