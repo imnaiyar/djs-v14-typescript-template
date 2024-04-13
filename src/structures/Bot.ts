@@ -22,25 +22,25 @@ import { pathToFileURL } from "node:url";
 /** The bot's client */
 export class Bot extends Client<true> {
   /** Configurations for the bot */
-  public config: typeof config;
+  public config = config;
 
   /** Collection of Slash Commands */
-  public commands: Collection<string, SlashCommand>;
+  public commands = new Collection<string, SlashCommand>();
 
   /** Collection of Prefix Commands */
-  public prefix: Collection<string, PrefixCommand>;
+  public prefix= new Collection<string, PrefixCommand>();
 
   /** Collection of Context Menu Commands */
-  public contexts: Collection<string, ContextMenuCommand>;
+  public contexts = new Collection<string, ContextMenuCommand>();
 
   /** Collection of Buttons */
-  public buttons: Collection<string, Button>;
+  public buttons = new Collection<string, Button>();
 
   /** Collection of command cooldowns */
-  public cooldowns: Collection<string, Collection<string, number>>;
+  public cooldowns = new Collection<string, Collection<string, number>>();
 
   /** Custom logger */
-  public logger: typeof Logger;
+  public logger = Logger;
 
   constructor() {
     super({
@@ -58,13 +58,6 @@ export class Bot extends Client<true> {
         repliedUser: false,
       },
     });
-    this.config = config;
-    this.commands = new Collection();
-    this.prefix = new Collection();
-    this.contexts = new Collection();
-    this.buttons = new Collection();
-    this.logger = Logger;
-    this.cooldowns = new Collection();
   }
 
   /**
