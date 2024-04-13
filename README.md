@@ -26,7 +26,7 @@ You need to include these two properties in the `data` property of the command: 
 ```js
 export default <SlashCommand> {
 data: {
-... //,
+..., // other properties
 integration_types: [0, 1],
 contexts: [0, 1, 2],
 },
