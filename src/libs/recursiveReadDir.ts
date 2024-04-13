@@ -5,13 +5,14 @@ import { readdirSync, lstatSync } from "node:fs";
  * @param dir - the directory to read (from the root directory)
  * @param skipDirectories The directories/sub-directories to skip
  * @param allowedExtensions extension of the files to read
- * @example
+ * @example 
+ * import { pathToFileURL } from "node:url";
  * const { reacursiveReadDir } = require('Bot-utils');
  *
  * const files = recursiveReadDir('src/commands');
  * const commands = [];
  * files.forEach((file) => {
- * const command = require(file);
+ * const { default: command } = await import(pathToFileURL(file).href);
  * commands.push(command.data.name, command);
  * });
  */
