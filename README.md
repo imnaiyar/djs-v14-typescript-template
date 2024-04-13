@@ -20,3 +20,18 @@ To run the bot, follow these steps:
 - To build the project, run: `npm run build`.
 - Rename `example.env` to `.env` and fill out the token, optionally provide discord's webhook urls for additional logs.
 - Start the project by running `npm start`.
+
+### Adding User Apps Commands
+You need to include these two properties in the `data` property of the command: `integration_types` and `contexts`. 
+```js
+export default <SlashCommand> {
+data: {
+... //,
+integration_types: [0, 1],
+contexts: [0, 1, 2],
+},
+...// other properties
+}
+```
+These determine what type of command it is and where it can be accessed from.
+Two enums `IntegrationTypes` and `ContextTypes` are available to help you with this.
