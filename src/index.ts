@@ -1,4 +1,4 @@
-import("dotenv/config");
+import "dotenv/config";
 import { Bot } from "#structures";
 
 const client = new Bot();
