@@ -1,5 +1,5 @@
 import { Message } from "discord.js";
-import { type Bot } from "./Bot";
+import { type Bot } from "#structures";
 import { type Permission } from "#libs/parsePerms";
 /* eslint-disable */
 

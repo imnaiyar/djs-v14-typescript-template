@@ -1,4 +1,4 @@
-import { Bot } from "#src/structures";
+import { Bot } from "#structures";
 import {
   EmbedBuilder,
   GuildChannelResolvable,

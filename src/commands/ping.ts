@@ -2,7 +2,7 @@ import { ContextTypes, IntegrationTypes } from "#src/libs/types";
 import { SlashCommand } from "#structures";
 import { ActionRowBuilder, ButtonBuilder, ButtonStyle } from "discord.js";
 
-export default <SlashCommand>{
+export default {
   data: {
     name: "ping",
     description: "Replies with pong!",
@@ -15,4 +15,4 @@ export default <SlashCommand>{
     );
     interaction.reply({ content: "Pong! " + client.ws.ping.toString() + "ms", components: [row] });
   },
-};
+} satisfies SlashCommand;

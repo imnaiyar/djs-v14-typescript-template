@@ -1,21 +1,21 @@
 {
   "compilerOptions": {
-    "target": "ESNext",
-    "module": "ESNext",
+    "target": "ES2022",
+    "module": "Node16",
     "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
     "allowJs": true,
     "checkJs": true,
-    "sourceMap": false,
+    "rootDir": "src",
     "outDir": "dist",
-    "removeComments": false,
     "strict": true,
     "noImplicitAny": true,
     "alwaysStrict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "moduleResolution": "Node",
-    "skipLibCheck": true ,
+    "moduleResolution": "Node16",
+    "skipLibCheck": true,
     "paths": {
       "#handlers": ["./src/handlers/index"],
       "#handlers/*": ["./src/handlers/*"],
@@ -29,6 +29,6 @@
       "#libs": ["./src/libs/index"]
     }
   },
-  "include": ["src/**/*"],
-  "exclude": ["node_modules/**", "dist/**"]
+  "include": ["src"],
+  "exclude": ["node_modules/"]
 }

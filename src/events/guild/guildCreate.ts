@@ -1,4 +1,4 @@
-import { Bot } from "#src/structures";
+import { Bot } from "#structures";
 import { EmbedBuilder, Guild, WebhookClient } from "discord.js";
 
 const webhookLogger = process.env.GUILD ? new WebhookClient({ url: process.env.GUILD }) : undefined;

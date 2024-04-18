@@ -1,5 +1,5 @@
 import { ButtonInteraction } from "discord.js";
-import { type Bot } from "./Bot";
+import { type Bot } from "#structures";
 /* eslint-disable */
 
 /** Buttons structure */

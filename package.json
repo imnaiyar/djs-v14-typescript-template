@@ -1,6 +1,6 @@
 {
   "name": "djs-v14-typescript-template",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A discord bot template using discord.js v14 in TypeScript",
   "main": "dist/index.js",
   "type": "module",

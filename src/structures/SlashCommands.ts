@@ -1,5 +1,5 @@
 import { ChatInputCommandInteraction, AutocompleteInteraction, ApplicationCommandOption, PermissionResolvable } from "discord.js";
-import { type Bot } from "./Bot";
+import { type Bot } from "#structures";
 
 import { IntegrationTypes, ContextTypes } from "#libs/types";
 /* eslint-disable */
