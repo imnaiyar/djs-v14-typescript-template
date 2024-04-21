@@ -19,15 +19,15 @@ To run the bot, follow these steps:
 
 ### Adding User Apps Commands
 You need to include these two properties in the `data` property of the command: `integration_types` and `contexts`. 
-```js
-export default <SlashCommand> {
+```ts
+export default {
 data: {
 ..., // other properties
 integration_types: [0, 1],
 contexts: [0, 1, 2],
 },
 ...// other properties
-}
+} satisfies SlashCommand;
 ```
 These determine what type of command it is and where it can be accessed from.
 Two enums `IntegrationTypes` and `ContextTypes` are available to help you with this.
