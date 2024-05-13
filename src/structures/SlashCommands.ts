@@ -1,4 +1,4 @@
-import { ChatInputCommandInteraction, AutocompleteInteraction, ApplicationCommandOption, PermissionResolvable } from "discord.js";
+import { ChatInputCommandInteraction, AutocompleteInteraction, APIApplicationCommandOption, PermissionResolvable } from "discord.js";
 import { type Bot } from "#structures";
 
 import { IntegrationTypes, ContextTypes } from "#libs/types";
@@ -22,7 +22,7 @@ export interface SlashCommand<Autocomplete extends boolean = false> {
     /**
      * Command options in an array
      */
-    options?: ApplicationCommandOption[];
+    options?: APIApplicationCommandOption[];
 
     /**
      * TYpe of the command
