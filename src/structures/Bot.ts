@@ -118,6 +118,7 @@ export class Bot extends Client<true> {
         if (this.commands.has(command.data.name)) throw new Error("The command already exists");
         // const vld = cmdValidation(command, file);
         // if (!vld) return;
+        if (typeof command !== "object") continue;
         this.commands.set(command.data.name, command);
         this.logger.log(`Loaded ${command.data.name}`);
         added++;
@@ -145,7 +146,7 @@ export class Bot extends Client<true> {
       try {
         const { default: cmd } = await import(pathToFileURL(filePath).href);
         const command = cmd as ContextMenuCommand;
-        if (typeof command !== "object") return;
+        if (typeof command !== "object") continue;
         if (this.contexts.has(command.data.name + command.data.type.toString())) throw new Error("The command already exists");
         // const vld = cmdValidation(command, file);
         // if (!vld) return;
@@ -177,7 +178,7 @@ export class Bot extends Client<true> {
         const { default: btn } = await import(pathToFileURL(filePath).href);
         const button = btn as Button;
         if (this.buttons.has(button.data.name)) throw new Error("The command already exists");
-        if (typeof button !== "object") return;
+        if (typeof button !== "object") continue;
         this.buttons.set(button.data.name, button);
         this.logger.log(`Loaded ${button.data.name}`);
         added++;
@@ -204,6 +205,7 @@ export class Bot extends Client<true> {
         const { default: cmd } = await import(pathToFileURL(filePath).href);
         const command = cmd as PrefixCommand;
         if (this.prefix.has(command.data.name)) throw new Error("The command already exists");
+        if (typeof command !== "object") continue;
         this.prefix.set(command.data.name, command);
         command.data?.aliases?.forEach((al: string) => this.prefix.set(al, command));
         this.logger.log(`Loaded ${command.data.name}`);
