@@ -213,7 +213,8 @@ async function validateCommand(
           ephemeral: true,
         });
         return false;
-      } else {
+      }
+      if (!interaction.inCachedGuild()) {
         await interaction.reply({
           content: `Oops! Looks like you ran this command in a server where I'm not in or as an User App command. This command is only meant to be used in a server I am a member of.`,
           ephemeral: true,
@@ -232,7 +233,8 @@ async function validateCommand(
           ephemeral: true,
         });
         return false;
-      } else {
+      }
+      if (!interaction.inCachedGuild()) {
         await interaction.reply({
           content: `Oops! Looks like you ran this command in a server where I'm not in or as an User App command. This command is only meant to be used in a server I am a member of.`,
           ephemeral: true,
