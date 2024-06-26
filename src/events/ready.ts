@@ -1,8 +1,8 @@
-import { type Bot } from "#structures";
+import type { Event } from "#structures";
 import { EmbedBuilder, WebhookClient } from "discord.js";
 const ready = process.env.READY_LOGS ? new WebhookClient({ url: process.env.READY_LOGS }) : undefined;
 
-export default async (client: Bot): Promise<void> => {
+const readyHandler: Event<"ready"> = async (client): Promise<void> => {
   client.logger.log(`Logged in as ${client.user.tag}`);
   const readyalertemb = new EmbedBuilder()
     .addFields(
@@ -41,3 +41,5 @@ export default async (client: Bot): Promise<void> => {
     });
   }
 };
+
+export default readyHandler;

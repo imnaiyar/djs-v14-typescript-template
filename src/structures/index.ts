@@ -1,5 +1,6 @@
-export { Button } from "#structures/Buttons";
-export { SlashCommand } from "#structures/SlashCommands";
-export { PrefixCommand } from "#structures/PrefixCommands";
-export { Bot } from "#structures/Bot";
-export { ContextMenuCommand } from "#structures/ContextMenuCommands";
+export * from "#structures/Buttons";
+export * from "#structures/SlashCommands";
+export * from "#structures/PrefixCommands";
+export * from "#structures/Bot";
+export * from "#structures/ContextMenuCommands";
+export * from "#structures/Event";

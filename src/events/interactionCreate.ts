@@ -1,5 +1,4 @@
 import {
-  Interaction,
   Collection,
   EmbedBuilder,
   WebhookClient,
@@ -9,7 +8,7 @@ import {
   ChatInputCommandInteraction,
   ContextMenuCommandInteraction,
 } from "discord.js";
-import { ContextMenuCommand, Bot, SlashCommand } from "#structures";
+import { ContextMenuCommand, Bot, SlashCommand, Event } from "#structures";
 import { parsePerms, Permission } from "#libs/parsePerms";
 import config from "#src/config";
 
@@ -20,7 +19,7 @@ const errorBtn = new ActionRowBuilder<ButtonBuilder>().addComponents(
   new ButtonBuilder().setLabel("Report Bug").setCustomId("error-report").setStyle(ButtonStyle.Secondary),
 );
 
-export default async (client: Bot, interaction: Interaction): Promise<void> => {
+const interactionHandler: Event<"interactionCreate"> = async (client, interaction): Promise<void> => {
   // Slash Commands
   if (interaction.isChatInputCommand()) {
     const command = client.commands.get(interaction.commandName);
@@ -188,6 +187,8 @@ export default async (client: Bot, interaction: Interaction): Promise<void> => {
     }
   }
 };
+
+export default interactionHandler;
 
 /** Validates requirements for Slash and Context Menu commands */
 async function validateCommand(

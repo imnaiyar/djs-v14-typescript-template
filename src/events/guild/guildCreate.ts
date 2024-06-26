@@ -1,9 +1,9 @@
-import { Bot } from "#structures";
+import { Bot, Event } from "#structures";
 import { EmbedBuilder, Guild, WebhookClient } from "discord.js";
 
 const webhookLogger = process.env.GUILD ? new WebhookClient({ url: process.env.GUILD }) : undefined;
 
-export default async (client: Bot, guild: Guild): Promise<void> => {
+const guildAddhandler: Event<"guildCreate"> = async (client: Bot, guild: Guild): Promise<void> => {
   if (!guild.available) return;
   if (!guild.members.cache.has(guild.ownerId)) await guild.fetchOwner({ cache: true }).catch(() => {});
   client.logger.success(`Guild Joined: ${guild.name} Members: ${guild.memberCount}`);
@@ -45,3 +45,5 @@ export default async (client: Bot, guild: Guild): Promise<void> => {
     embeds: [embed],
   });
 };
+
+export default guildAddhandler;

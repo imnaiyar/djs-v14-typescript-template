@@ -1,8 +1,7 @@
-import { Bot } from "#structures";
+import { Event } from "#structures";
 import {
   EmbedBuilder,
   GuildChannelResolvable,
-  Message,
   ActionRowBuilder,
   ButtonBuilder,
   ButtonStyle,
@@ -15,7 +14,7 @@ import { parsePerms } from "#libs/parsePerms";
 const Logger = process.env.COMMANDS_USED ? new WebhookClient({ url: process.env.COMMANDS_USED }) : undefined;
 
 /** Message Handler */
-export default async (client: Bot, message: Message): Promise<void> => {
+const messageHandler: Event<"messageCreate"> = async (client, message): Promise<void> => {
   if (message.author.bot) return;
 
   // Check for bot's mention
@@ -130,3 +129,5 @@ export default async (client: Bot, message: Message): Promise<void> => {
     });
   }
 };
+
+export default messageHandler;
